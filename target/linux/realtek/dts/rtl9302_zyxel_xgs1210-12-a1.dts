@@ -8,7 +8,7 @@
 	model = "Zyxel XGS1210-12 A1 Switch";
 };
 
-&mdio {
+&mdio_bus0 {
 	phy24: ethernet-phy@24 {
 		reg = <24>;
 		compatible = "ethernet-phy-ieee802.3-c45";
@@ -33,15 +33,17 @@
 		port@24 {
 			reg = <24>;
 			label = "lan9";
-			phy-mode = "2500base-x";
+			pcs-handle = <&serdes6>;
 			phy-handle = <&phy24>;
+			phy-mode = "2500base-x";
 			led-set = <1>;
 		};
 		port@25 {
 			reg = <25>;
 			label = "lan10";
-			phy-mode = "2500base-x";
+			pcs-handle = <&serdes7>;
 			phy-handle = <&phy25>;
+			phy-mode = "2500base-x";
 			led-set = <1>;
 		};
 	};
